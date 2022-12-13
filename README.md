@@ -38,9 +38,6 @@ plt.ylabel("Profit ($10,000)")
 plt.title("Profit Prediction")
 
 def computeCost(X,y,theta):
-    """"
-    Take in a numpy array X,y,theta and generate the cost function of using theta as a parameter in a linera regression tool   
-    """
     m=len(y) 
     h=X.dot(theta) 
     square_err=(h-y)**2
@@ -54,10 +51,6 @@ theta=np.zeros((2,1))
 computeCost(X,y,theta) 
 
 def gradientDescent(X,y,theta,alpha,num_iters):
-    """"
-    Take in numpy array X,y and theta and update theta by taking num_iters gradient steps with learning rate of alpha 
-    return theta and the list of the cost of the theta during each iteration
-    """
     m=len(y)
     J_history=[] #empty list
     for i in range(num_iters):
@@ -87,9 +80,6 @@ plt.ylabel("Profit ($10,000)")
 plt.title("Profit Prediction")
 
 def predict(x,theta):
-    """"
-    Takes in numpy array of x and theta and return the predicted valude of y based on theta
-    """
     predictions=np.dot(theta.transpose(),x)
     return predictions[0]
 
